@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rhb.sas.stockholder.bean.Stockholder"
+		table="stockholder">
+		<id name="pk" type="java.lang.String">
+			<column name="pk" length="24" />
+			<generator class="assigned" />
+		</id>
+		<property name="stockNo" type="java.lang.String">
+			<column name="stockNo" length="24" />
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="stockName" length="24" />
+		</property>
+		<property name="holderNo" type="java.lang.String">
+			<column name="holderNo" length="24" />
+		</property>
+		<property name="holderName" type="java.lang.String">
+			<column name="holderName" length="24" />
+		</property>
+		<property name="reportedDate" type="java.util.Date">
+			<column name="reportedDate" length="10" />
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<column name="endDate" length="10" />
+		</property>
+		<property name="holdingNumber" type="java.lang.Long">
+			<column name="holdingNumber" />
+		</property>
+		<property name="holdingRatio" type="java.lang.Double">
+			<column name="holdingRatio" precision="53" scale="0" />
+		</property>
+		<property name="holdingType" type="java.lang.String">
+			<column name="holdingType" length="24" />
+		</property>
+
+
+	</class>
+</hibernate-mapping>

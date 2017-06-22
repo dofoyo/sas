@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+ 	  	<form-bean name="stockForm" type="com.rhb.af.web.struts.form.BaseDynaActionForm">   
+ 	  			<form-property name="page" type="com.rhb.af.bean.Page"/>
+				<form-property name="bean" type="com.rhb.sas.stock.bean.Stock"/>   
+				<form-property name="query" type="com.rhb.sas.stock.bean.StockQuery"/>
+				<form-property name="writeBusiness" type="java.lang.String" initial="stockService"/>
+		</form-bean>   
+	</form-beans>
+	
+	<action-mappings>
+		<action
+			name="stockForm"
+			path="/stockReportListAction"
+			type="com.rhb.sas.stock.web.struts.action.StockReportListAction">
+		</action>
+
+
+		<action
+			name="stockForm"
+			path="/stockUpdateListAction"
+			type="com.rhb.af.web.struts.action.ListAction"
+			scope="session">
+	      <forward name="listTile" path="/stockUpdateListTile"/>
+		</action>
+
+		<action
+			name="stockForm"
+			path="/stockCreateAction"
+			type="com.rhb.af.web.struts.action.CreateAction"
+			scope="session">
+	      <forward name="showTile" path="/stockUpdateShowTile"/>
+		</action>
+
+		<action
+			name="stockForm"
+			path="/stockUpdateAction"
+			type="com.rhb.af.web.struts.action.ShowAction"
+			scope="session">
+	      <forward name="showTile" path="/stockUpdateShowTile"/>
+		</action>
+
+		<action
+			name="stockForm"
+			path="/stockSaveAction"
+			type="com.rhb.af.web.struts.action.SaveAction"
+			scope="session">
+	      <forward name="succeed" path="/stockUpdateListAction.do"/>
+	      <forward name="fail" path="/stockUpdateShowTile"/>
+		</action>
+		
+		<action path="/downloadMarketInfo" 
+			type="com.rhb.af.web.struts.action.BaseForwardAction"
+			parameter="/downloadMarketInfoTile"/>
+			
+		<action path="/downloadYjyg" 
+			type="com.rhb.af.web.struts.action.BaseForwardAction"
+			parameter="/downloadYjygTile"/>
+
+	</action-mappings>
+
+</struts-config>

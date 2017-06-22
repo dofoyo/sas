@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rhb.sas.report.profitstatement.ProfitStatement" table="profitstatement">
+		<id name="statementPk" type="java.lang.String">
+			<column name="statementPk" length="24" />
+			<generator class="assigned" />
+		</id>
+		<property name="stockNo" type="java.lang.String">
+			<column name="stockNo" length="24" />
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="stockName" length="24" />
+		</property>
+		<property name="theYear" type="java.lang.String">
+			<column name="theYear" length="24" />
+		</property>
+		<property name="theMonth" type="java.lang.String">
+			<column name="theMonth" length="24" />
+		</property>
+		<property name="reportDate" type="java.util.Date">
+			<column name="reportDate" length="24" />
+		</property>
+		<property name="allOperatingRevenue" type="java.lang.Double">
+			<column name="allOperatingRevenue" precision="53" scale="0" />
+		</property>
+		<property name="allOperatingCost" type="java.lang.Double">
+			<column name="allOperatingCost" precision="53" scale="0" />
+		</property>
+		<property name="operatingRevenue" type="java.lang.Double">
+			<column name="operatingRevenue" precision="53" scale="0" />
+		</property>
+		<property name="operatingCost" type="java.lang.Double">
+			<column name="operatingCost" precision="53" scale="0" />
+		</property>
+		<property name="operatingExpense" type="java.lang.Double">
+			<column name="operatingExpense" precision="53" scale="0" />
+		</property>
+		<property name="salesExpense" type="java.lang.Double">
+			<column name="salesExpense" precision="53" scale="0" />
+		</property>
+		<property name="financeExpense" type="java.lang.Double">
+			<column name="financeExpense" precision="53" scale="0" />
+		</property>
+		<property name="tax" type="java.lang.Double">
+			<column name="tax" precision="53" scale="0" />
+		</property>
+
+	</class>
+</hibernate-mapping>

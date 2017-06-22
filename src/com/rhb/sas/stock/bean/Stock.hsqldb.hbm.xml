@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rhb.sas.stock.bean.Stock" table="stock">
+		<id name="stockNo" type="java.lang.String">
+			<column name="stockNo" length="24" />
+			<generator class="assigned" />
+		</id>
+		<property name="stockName" type="java.lang.String">
+			<column name="stockName" length="24" />
+		</property>
+		<property name="mainBusiness" type="java.lang.String">
+			<column name="mainBusiness" length="24" />
+		</property>
+		<property name="trade" type="java.lang.String">
+			<column name="trade" length="24" />
+		</property>
+		<property name="nextTenYearValue" type="java.lang.Double">
+			<column name="nextTenYearValue" precision="53" scale="0" />
+		</property>
+		<property name="afterTenYearValue" type="java.lang.Double">
+			<column name="afterTenYearValue" precision="53" scale="0" />
+		</property>
+		<property name="pricePerShare" type="java.lang.Double">
+			<column name="pricePerShare" precision="53" scale="0" />
+		</property>
+		<property name="marketValue" type="java.lang.Double">
+			<column name="marketValue" precision="53" scale="0" />
+		</property>
+		<property name="currentMarketValue" type="java.lang.Double">
+			<column name="currentMarketValue" precision="53" scale="0" />
+		</property>
+		<property name="dzhValue" type="java.lang.Double">
+			<column name="dzhValue" precision="53" scale="0" />
+		</property>
+		<property name="nextTenYearDiscount" type="java.lang.Double">
+			<column name="nextTenYearDiscount" precision="53" scale="0" />
+		</property>
+		<property name="discount" type="java.lang.Double">
+			<column name="discount" precision="53" scale="0" />
+		</property>
+
+		<property name="latestNetProfitPlus" type="java.lang.Double">
+			<column name="latestNetProfitPlus" precision="53" scale="0" />
+		</property>
+		<property name="latestEarnings" type="java.lang.Double">
+			<column name="latestEarnings" precision="53" scale="0" />
+		</property>
+		<property name="earningsGrowthRatio" type="java.lang.Double">
+			<column name="earningsGrowthRatio" precision="53" scale="0" />
+		</property>
+		<property name="decadeEarningsGrowthRatio" type="java.lang.Double">
+			<column name="decadeEarningsGrowthRatio" precision="53" scale="0" />
+		</property>
+
+		<property name="grossProfit" type="java.lang.Double">
+			<column name="grossProfit" precision="53" scale="0" />
+		</property>
+
+		<property name="grossProfitPlus" type="java.lang.Double">
+			<column name="grossProfitPlus" precision="53" scale="0" />
+		</property>
+
+		<property name="inventoryRatio" type="java.lang.Double">
+			<column name="inventoryRatio" precision="53" scale="0" />
+		</property>
+
+		<property name="accountsRreceivableRatio" type="java.lang.Double">
+			<column name="accountsRreceivableRatio" precision="53" scale="0" />
+		</property>
+
+
+		<property name="roe" type="java.lang.Double">
+			<column name="roe" precision="53" scale="0" />
+		</property>
+		<property name="netCashFlowPerShare" type="java.lang.Double">
+			<column name="netCashFlowPerShare" precision="53" scale="0" />
+		</property>
+
+		<property name="notes" type="java.lang.String">
+			<column name="notes" length="250" />
+		</property>
+		<property name="recommendable" type="java.lang.String">
+			<column name="recommendable" length="10" />
+		</property>
+		<property name="madeDate" type="java.util.Date">
+			<column name="madeDate" length="10" />
+		</property>
+		<property name="reportDate" type="java.util.Date">
+			<column name="reportDate" length="10" />
+		</property>
+		<property name="noticeDate" type="java.util.Date">
+			<column name="noticeDate" length="10" />
+		</property>
+
+		<property name="quarterPerformance" type="java.lang.String">
+			<column name="quarterPerformance" length="20" />
+		</property>
+		
+		<property name="latestPrimeOperatingProfitPlus" type="java.lang.Double">
+			<column name="latestPrimeOperatingProfitPlus" precision="53" scale="0" />
+		</property>
+		<property name="latestDepreciationAssets" type="java.lang.Double">
+			<column name="latestDepreciationAssets" precision="53" scale="0" />
+		</property>
+		<property name="latestPurchaseAssets" type="java.lang.Double">
+			<column name="latestPurchaseAssets" precision="53" scale="0" />
+		</property>
+		<property name="latestQuarterPrimeOperatingProfitPlus" type="java.lang.Double">
+			<column name="latestQuarterPrimeOperatingProfitPlus" precision="53" scale="0" />
+		</property>
+		<property name="latestQuarterDepreciationAssets" type="java.lang.Double">
+			<column name="latestQuarterDepreciationAssets" precision="53" scale="0" />
+		</property>
+		<property name="latestQuarterPurchaseAssets" type="java.lang.Double">
+			<column name="latestQuarterPurchaseAssets" precision="53" scale="0" />
+		</property>
+
+		<property name="latestEarnings_quarter" type="java.lang.Double">
+			<column name="latestEarnings_quarter" precision="53" scale="0" />
+		</property>
+		<property name="nextTenYearValue_quarter" type="java.lang.Double">
+			<column name="nextTenYearValue_quarter" precision="53" scale="0" />
+		</property>
+		<property name="afterTenYearValue_quarter" type="java.lang.Double">
+			<column name="afterTenYearValue_quarter" precision="53" scale="0" />
+		</property>
+		<property name="nextTenYearDiscount_quarter" type="java.lang.Double">
+			<column name="nextTenYearDiscount_quarter" precision="53" scale="0" />
+		</property>
+		<property name="discount_quarter" type="java.lang.Double">
+			<column name="discount_quarter" precision="53" scale="0" />
+		</property>
+
+		<property name="earningsAvg" type="java.lang.Double">
+			<column name="earningsAvg" precision="53" scale="0" />
+		</property>
+
+		<property name="deleted" type="java.lang.Integer">
+			<column name="deleted" precision="53" scale="0" />
+		</property>		
+
+	</class>
+</hibernate-mapping>

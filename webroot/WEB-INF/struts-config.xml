@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"><struts-config>
+	<action-mappings>
+		<action path="/welcome" 
+			type="com.rhb.af.web.struts.action.BaseForwardAction"
+			parameter="/homeTile"/>
+			
+	</action-mappings>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-definition-Report.xml,/WEB-INF/tiles-definition-Stock.xml,/WEB-INF/tiles-definition-TradingRecord.xml,/WEB-INF/tiles-definition-TradingProfit.xml,/WEB-INF/tiles-definition.xml"/>
+		<set-property property="definitions-debug" value="2"/>
+		<set-property property="definitions-parser-details" value="2"/>
+		<set-property property="definitions-parser-validate" value="true"/>
+	</plug-in>
+
+</struts-config>

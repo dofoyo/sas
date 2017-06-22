@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+ 	  	<form-bean name="tradingProfitForm" type="com.rhb.af.web.struts.form.BaseDynaActionForm">   
+ 	  			<form-property name="page" type="com.rhb.af.bean.Page"/>
+				<form-property name="bean" type="com.rhb.sas.tradingrecord.bean.TradingProfit"/>   
+				<form-property name="query" type="com.rhb.sas.tradingrecord.bean.TradingProfitQuery"/>
+				<form-property name="writeBusiness" type="java.lang.String" initial="tradingRecordService"/>
+				<form-property name="findBusiness" type="java.lang.String" initial="tradingRecordService"/>
+				<form-property name="findMethod" type="java.lang.String" initial="getReport"/>
+		</form-bean>   
+	</form-beans>
+	
+	<action-mappings>
+
+		<action
+			name="tradingProfitForm"
+			path="/tradingProfitUpdateListAction"
+			type="com.rhb.af.web.struts.action.ListAction"
+			scope="session">
+	      <forward name="listTile" path="/tradingProfitUpdateListTile"/>
+		</action>
+
+
+	</action-mappings>
+
+</struts-config>

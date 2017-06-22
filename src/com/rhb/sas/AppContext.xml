@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans>
+
+
+  <bean id="interfacesFacade" class="com.rhb.sas.interfaces.InterfacesFacade_Impl">
+    <property name="stockBusiness" ref="stockService"/>
+    <property name="reportBusiness" ref="reportService"/>
+    <property name="findBusiness" ref="findBusiness"/>
+    <property name="downloadMarketInfo" ref="downloadMarketInfoFromDzh"/>
+    <property name="downloadBalanceSheet" ref="downloadBalanceSheetFromSina"/>
+    <property name="downloadCashFlow" ref="downloadCashFlowFromSina"/>
+    <property name="downloadFinanceSummary" ref="downloadFinanceSummaryFromSina"/>
+    <property name="downloadProfitStatement" ref="downloadProfitStatementFromSina"/>
+    <property name="downloadReportedStockNos" ref="downloadReportedStockNosFromSina"/>
+    <property name="downloadFinancialGuide" ref="downloadFinancialGuideFromSina"/>
+    <property name="downloadYjyg" ref="downloadYjygFromEastmoney"/>
+    <property name="pss" ref="profitStatementBusiness"/>
+    <property name="down" ref="downloadProfitStatement"/>    
+    <property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="console" class="com.rhb.sas.application.console.Console">
+  	<constructor-arg type="com.rhb.sas.application.console.Sensor">
+  	<ref bean="sensor"/>
+  	</constructor-arg>
+  </bean>
+  	
+  <bean id="sensor" class="com.rhb.sas.application.console.Sensor"/>
+  
+  <bean id="downloadYjygFromEastmoney" class="com.rhb.sas.download.yjyg.DownloadYjygFromEastmoney">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadReportedStockNosFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadReportedStockNosFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+
+  <bean id="downloadFinancialGuideFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadFinancialGuideFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadBalanceSheetFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadBalanceSheetFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadCashFlowFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadCashFlowFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadFinanceSummaryFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadFinanceSummaryFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadProfitStatementFromSina" class="com.rhb.sas.interfaces.downloadreport.sina.DownloadProfitStatementFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="downloadMarketInfoFromDzh" class="com.rhb.sas.interfaces.downloadmarketinfo.DownloadMarketInfoFromDzh">
+  	<property name="file" value="D:\\java\\hsqldb\\marketInfo.xls"/>
+  </bean>
+
+  <bean id="downloadProfitStatement" class="com.rhb.sas.report.profitstatement.DownloadProfitStatementFromSina">
+  	<property name="sensor" ref="sensor"/>
+  </bean>
+
+  <bean id="ProfitStatementService" parent="baseTransactionProxy">
+    <property name="target" ref="profitStatementBusiness"/>
+  </bean>
+  <bean id="profitStatementBusiness" class="com.rhb.sas.report.profitstatement.ProfitStatementBusinessImpl">
+    <property name="generalDAO" ref="generalDAO"/>
+    <property name="sensor" ref="sensor"/>
+  </bean>
+
+  <bean id="stockholderService" parent="baseTransactionProxy">
+    <property name="target" ref="stockholderBusiness"/>
+  </bean>
+  <bean id="stockholderBusiness" class="com.rhb.sas.stockholder.business.StockholderBusiness_SpringImpl">
+    <property name="generalDAO" ref="generalDAO"/>
+  </bean>
+
+  <bean id="stockService" parent="baseTransactionProxy">
+    <property name="target" ref="stockBusiness"/>
+  </bean>
+  <bean id="stockBusiness" class="com.rhb.sas.stock.business.StockBusiness_Impl">
+    <property name="generalDAO" ref="generalDAO"/>
+    <property name="reportBusiness" ref="reportBusiness"/>
+     <property name="sensor" ref="sensor"/>
+  </bean>
+  
+  <bean id="reportService" parent="baseTransactionProxy">
+    <property name="target" ref="reportBusiness"/>
+  </bean>
+  <bean id="reportBusiness" class="com.rhb.sas.report.business.ReportBusiness_Impl">
+    <property name="generalDAO" ref="generalDAO"/>
+    <property name="sensor" ref="sensor"/>
+  </bean>
+ 
+   <bean id="tradingRecordService" parent="baseTransactionProxy">
+    <property name="target" ref="tradingRecordBusiness"/>
+  </bean>
+  <bean id="tradingRecordBusiness" class="com.rhb.sas.tradingrecord.business.TradingRecordBusiness_Impl">
+    <property name="generalDAO" ref="generalDAO"/>
+    <property name="sensor" ref="sensor"/>
+  </bean>
+ 
+	<bean id="findService" parent="baseTransactionProxy">
+		<property name="target" ref="findBusiness"/>
+	</bean>
+
+	<bean id="findBusiness" class="com.rhb.af.business.FindBusiness_Impl">
+		<property name="generalDAO" ref="generalDAO"/>
+	</bean>
+
+	<bean id="generalDAO" class="com.rhb.af.dao.GeneralDAO_Hql_SpringHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+
+  <bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+    <property name="transactionManager" ref="transactionManager"/>
+    <property name="transactionAttributes">
+      <props>
+      	<prop key="save*">PROPAGATION_SUPPORTS</prop>
+        <prop key="create*">PROPAGATION_SUPPORTS</prop>
+        <prop key="delete*">PROPAGATION_SUPPORTS</prop>
+        <prop key="update*">PROPAGATION_SUPPORTS</prop>
+        <prop key="*">PROPAGATION_SUPPORTS</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <property name="configLocation" value="/com/rhb/sas/hibernate_hsqldb.cfg.xml"/>
+  </bean>
+  </beans>

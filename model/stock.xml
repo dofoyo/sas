@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GB2312"?>
+<root>
+	<key name="encoding">GB2312</key>
+	<key name="packagePrefix">com.rhb.sas</key>
+	<key name="sourcePrefix">com/rhb/sas</key>
+	<key name="catalog" value="sas"/>
+	<key name="schema">dbo</key>
+
+	<object name="stock">
+		<field name="stockPk"	type="String" 	length="24"	caption="编码" firstPk="true"></field>
+	    <field name="stockNo"	type="String" 	length="24"	caption="股票代码" secondPk="true" findBy="true" required="true"></field>
+		<field name="stockName" 	type="String" 	length="24"	caption="股票名称" required="true" findBy="true"></field>
+		<field name="mainBusiness" 	type="String" 	length="24"	caption="主营业务"></field>
+		<field name="trade" 	type="String" 	length="24"	caption="行业"></field>
+
+		<field name="roe" 	type="Double" 	length="24"	caption="净资产收益率"></field>
+		<field name="netCashFlowPerShare" 	type="Double" 	length="24"	caption="每股现金流"></field>
+		<field name="grossProfit" 	type="Double" 	length="24"	caption="毛利率"></field>
+		<field name="grossProfitPlus" 	type="Double" 	length="24"	caption="毛利率(扣除3项费用)"></field>
+		<field name="inventoryRatio" 	type="Double" 	length="24"	caption="库存率"></field>
+		<field name="accountsRreceivableRatio" 	type="Double" 	length="24"	caption="应收帐款率"></field>
+		
+		<field name="latestNetProfitPlus" 	type="Double" 	length="24"	caption="净利润(扣除后)"></field>
+		<field name="latestEarnings" 	type="Double" 	length="24"	caption="股东收益"></field>
+		<field name="earningsGrowthRatio" 	type="Double" 	length="24"	caption="股东收益增长率"></field>
+		<field name="decadeEarningsGrowthRatio" 	type="Double" 	length="24"	caption="未来10年股东收益增长率"></field>
+		
+		<field name="nextTenYearValue" 	type="Double" 	length="24"	caption="未来10年价值"></field>
+		<field name="afterTenYearValue" 	type="Double" 	length="24"	caption="未来10年后价值"></field>
+		<field name="pricePerShare" 	type="Double" 	length="24"	caption="当前股价"></field>
+		<field name="marketValue" 	type="Double" 	length="24"	caption="当前市值"></field>
+		<field name="currentMarketValue" 	type="Double" 	length="24"	caption="当前流通市值"></field>
+		<field name="dzhValue" 	type="Double" 	length="24"	caption="大智慧市值"></field>
+		<field name="nextTenYearDiscount" 	type="Double" 	length="24"	caption="未来10年折价率"></field>
+		<field name="discount" 	type="Double" 	length="24"	caption="总折价率"></field>
+		<field name="recommendalbe" 	type="String" 	length="10"	caption="关注度"></field>
+		<field name="notes" 	type="String" 	length="250"	caption="备注"></field>
+		<field name="reportDate" 	type="Date" 	length="10"	caption="年报日期"></field>
+		<field name="noticeDate" 	type="Date" 	length="10"	caption="业绩预告日期"></field>
+		<field name="quarterPerformance" 	type="String" 	length="20"	caption="季度业绩表现"></field>
+		
+		<field name="latestPrimeOperatingProfitPlus" 	type="Double" 	length="24"	caption="最新年主营业务利润"></field>
+		<field name="latestDepreciationAssets" 	type="Double" 	length="24"	caption="最新年固定资产折旧"></field>
+		<field name="latestPurchaseAssets" 	type="Double" 	length="24"	caption="最新年固定资产投资"></field>
+		<field name="latestQuarterPrimeOperatingProfitPlus" 	type="Double" 	length="24"	caption="最新季主营业务利润"></field>
+		<field name="latestQuarterDepreciationAssets" 	type="Double" 	length="24"	caption="最新季固定资产折旧"></field>
+		<field name="latestQuarterPurchaseAssets" 	type="Double" 	length="24"	caption="最新季固定资产投资"></field>
+		
+		<field name="nextTenYearValue_quarter" 	type="Double" 	length="24"	caption="未来10年价值(根据季报估算)"></field>
+		<field name="afterTenYearValue_quarter" 	type="Double" 	length="24"	caption="未来10年后价值(根据季报估算)"></field>
+		<field name="nextTenYearDiscount_quarter" 	type="Double" 	length="24"	caption="未来10年折价率(根据季报估算)"></field>
+		<field name="discount_quarter" 	type="Double" 	length="24"	caption="总折价率(根据季报估算)"></field>
+
+		<field name="earningsAvg" 	type="Double" 	length="24"	caption="近年平均收益"></field>
+		<field name="deleted" 	type="Integer" 	length="24"	caption="已退市"></field>
+
+		
+	</object>
+</root>

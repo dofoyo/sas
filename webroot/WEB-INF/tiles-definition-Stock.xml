@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+        
+<tiles-definitions>
+	<definition name="/stockUpdateListTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=stockUpdate.list"/>
+	</definition>
+
+	<definition name="/stockUpdateShowTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=stockUpdate.show"/>
+	</definition>
+	
+	<definition name="/downloadMarketInfoTile" extends="defaultLayoutTile">
+		<put name="body" value="../downloadMarketInfo.jsp"/>
+	</definition>
+		
+	<definition name="/downloadYjygTile" extends="defaultLayoutTile">
+		<put name="body" value="../downloadYjyg.jsp"/>
+	</definition>
+</tiles-definitions>
+

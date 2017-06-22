@@ -1,0 +1,43 @@
+<screen-definitions>
+	<screen name="tradingRecordUpdate.list" title="tradingRecord update list"  builder="com.rhb.af.web.screen.util.HtmlList">
+		<fields>
+			<field name="madeDate" format="yyyy-MM-dd"/>
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="action" />
+			<field name="quantity" format="0" align="right"/>
+			<field name="unitprice" format="0.00" align="right"/>
+			<field name="amount" format="0.00" align="right"/>
+			<field name="total" format="0.00" align="right"/>
+			<field name="fee" format="0.000" align="right"/>
+			<field name="tax" format="0.00" align="center"/>
+			<field name="cost" format="0.00" align="right"/>
+		</fields>
+		<behaviors>
+			<behavior value="create" caption="create" url="tradingRecordCreateAction.do"/>
+			<behavior value="update" caption="update" url="tradingRecordUpdateAction.do"/>
+			<behavior value="refresh" caption="refresh"/>
+		</behaviors>
+	</screen>
+
+	<screen name="tradingRecordUpdate.show" title="tradingRecord update show" builder="com.rhb.af.web.screen.util.HtmlShow">
+		<fields>
+			<field name="madeDate" format="yyyy-MM-dd"/>
+			<field name="stockNo" />
+			<field name="action" />
+			<field name="quantity" format="0" />
+			<field name="unitprice" format="0.00" />
+			<field name="amount" format="0.00" />
+			<field name="total" format="0.00" />
+			<field name="fee" format="0.00" />
+			<field name="tax" format="0.00" />
+			<field name="cost" format="0.00" />
+		</fields>
+		<behaviors>
+			<behavior value="back" caption="back"/>
+			<behavior value="delete" caption="delete" url="tradingRecordDeleteAction.do"/>
+			<behavior value="save" caption="save" url="tradingRecordSaveAction.do"/>
+		</behaviors>
+	</screen>
+</screen-definitions>
+

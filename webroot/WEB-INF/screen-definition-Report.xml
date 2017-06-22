@@ -1,0 +1,106 @@
+<screen-definitions>
+	<screen name="reportUpdate.list" title="Report Update List" builder="com.rhb.af.web.screen.util.HtmlList">
+		<fields>
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="theYear"/>
+			<field name="theMonth"/>			
+			<field name="netProfit" format="#.00" />
+			<field name="purchaseAssets" format="0.00" />
+			<field name="depreciationAssets" format="0.00" />
+			<field name="earnings" format="0.00" />
+			<field name="earningsAvg" format="0.00" />
+			<field name="earningsGrowthRatio" format="0.00" />
+			<field name="cash" format="0.00" />
+			<field name="inventories" format="0.00" />
+			<field name="accountsRreceivable" format="0.00" />
+			<field name="notesReceivable" format="0.00" />
+			<field name="otherReceivable" format="0.00" />
+			<field name="totalCurrentAssets" format="0.00" />
+			<field name="payables" format="0.00" />
+			<field name="currentLiabilities" format="0.00" />
+			<field name="totalAssets" format="0.00" />
+			<field name="totalLiabilities" format="0.00" />
+			<field name="roe" format="0.00" />
+		</fields>
+		<behaviors>
+			<behavior value="create" caption="create" url="reportCreateAction.do"/>
+			<behavior value="update" caption="update" url="reportUpdateAction.do"/>
+			<behavior value="refresh" caption="refresh"/>
+		</behaviors>
+	</screen>
+
+	<screen name="reportView.list" title="Report View List"
+		extend="reportUpdate.list">
+		<fields>
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="theYear" caption="年份"/>
+			<field name="theMonth" caption="月份"/>		
+			<field name="roe" format="0.00" caption="净资产收益率" align="right"/>
+			<field name="grossProfitPlus" format="0.00" caption="毛利率" align="right"/>
+			<field name="netCashFlowPerShare" format="0.00" caption="每股现金流" align="right"/>
+			<field name="netProfitPlus" format="0.00" caption="净利润" align="right" formula="netProfitPlus/100000000"/>
+			<field name="primeOperatingProfit" format="0.00" caption="主营业务利润" align="right" formula="primeOperatingProfit/100000000"/>
+			<field name="operatingProfit" format="0.00" caption="营业利润" align="right" formula="operatingProfit/100000000"/>
+			<field name="operatingExpense" format="0.00" caption="管理费用" align="right" formula="operatingExpense/100000000"/>
+			<field name="salesExpense" format="0.00" caption="销售费用" align="right" formula="salesExpense/100000000"/>
+			<field name="financeExpense" format="0.00" caption="财务费用" align="right" formula="financeExpense/100000000"/>
+			<field name="purchaseAssets" format="0.00" caption="购置" align="right" formula="purchaseAssets/100000000"/>
+			<field name="depreciationAssets" format="0.00" caption="折旧" align="right" formula="depreciationAssets/100000000"/>
+			<field name="inventoryRatio" format="0.00" caption="库存率" align="right"/>
+			<field name="accountsRreceivableRatio" format="0.00" caption="应收帐款率" align="right"/>
+			<field name="earnings" format="0.00" caption="股东收益" align="right" formula="earnings/100000000"/>
+			<field name="earningsAvg" format="0.00" caption="平均收益" align="right" formula="earningsAvg/100000000"/>
+			<field name="earningsGrowthRatio" format="0.00" caption="收益增长率" align="right"/>
+			<field name="netCashFlow" format="0.00" caption="现金流" align="right" formula="netCashFlow/100000000"/>
+			<field name="shareholders" format="0.00" caption="现金流增长率" align="right"/>
+		</fields>
+		<behaviors>
+			<behavior value="view" caption="view" url="reportViewAction.do"/>
+			<behavior value="refresh" caption="refresh"/>
+		</behaviors>
+	</screen>
+
+	<screen name="reportUpdate.show" title="Report Update Show" builder="com.rhb.af.web.screen.util.HtmlShow">
+		<fields>
+			<field name="reportPk" hidden="true" />
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="periodType" />
+			<field name="description" />
+			<field name="beginDate" format="yyyy-MM-dd" />
+			<field name="endDate" format="yyyy-MM-dd" />
+			<field name="cash" format="0.00" />
+			<field name="inventories" format="0.00" />
+			<field name="accountsRreceivable" format="0.00" />
+			<field name="notesReceivable" format="0.00" />
+			<field name="otherReceivable" format="0.00" />
+			<field name="totalCurrentAssets" format="0.00" />
+			<field name="payables" format="0.00" />
+			<field name="currentLiabilities" format="0.00" />
+			<field name="totalAssets" format="0.00" />
+			<field name="totalLiabilities" format="0.00" />
+			<field name="purchaseAssets" format="0.00" />
+			<field name="depreciationAssets" format="0.00" />
+			<field name="netProfit" format="0.00" />
+			<field name="netProfitPlus" format="0.00" />
+			<field name="shareholders" format="0.00" />
+			<field name="netCashFlow" format="0.00" />
+			<field name="roe" format="0.00" />
+		</fields>
+		<behaviors>
+			<behavior value="back" caption="back"/>
+			<behavior value="save" caption="save" url="reportSaveAction.do"/>
+		</behaviors>
+	</screen>
+
+	<screen name="reportView.show" title="Report View Show"
+		extend="reportUpdate.show">
+		<behaviors>
+			<behavior value="back" caption="back"/>
+		</behaviors>
+	</screen>
+
+</screen-definitions>
+

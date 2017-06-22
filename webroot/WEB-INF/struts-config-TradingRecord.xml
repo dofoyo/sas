@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+ 	  	<form-bean name="tradingRecordForm" type="com.rhb.af.web.struts.form.BaseDynaActionForm">   
+ 	  			<form-property name="page" type="com.rhb.af.bean.Page"/>
+				<form-property name="bean" type="com.rhb.sas.tradingrecord.bean.TradingRecord"/>   
+				<form-property name="query" type="com.rhb.sas.tradingrecord.bean.TradingRecordQuery"/>
+				<form-property name="writeBusiness" type="java.lang.String" initial="tradingRecordService"/>
+		</form-bean>   
+	</form-beans>
+	
+	<action-mappings>
+
+		<action
+			name="tradingRecordForm"
+			path="/tradingRecordUpdateListAction"
+			type="com.rhb.af.web.struts.action.ListAction"
+			scope="session">
+	      <forward name="listTile" path="/tradingRecordUpdateListTile"/>
+		</action>
+
+		<action
+			name="tradingRecordForm"
+			path="/tradingRecordCreateAction"
+			type="com.rhb.af.web.struts.action.CreateAction"
+			scope="session">
+	      <forward name="showTile" path="/tradingRecordUpdateShowTile"/>
+		</action>
+
+		<action
+			name="tradingRecordForm"
+			path="/tradingRecordUpdateAction"
+			type="com.rhb.af.web.struts.action.ShowAction"
+			scope="session">
+	      <forward name="showTile" path="/tradingRecordUpdateShowTile"/>
+		</action>
+
+		<action
+			name="tradingRecordForm"
+			path="/tradingRecordSaveAction"
+			type="com.rhb.af.web.struts.action.SaveAction"
+			scope="session">
+	      <forward name="succeed" path="/tradingRecordUpdateListAction.do"/>
+	      <forward name="fail" path="/tradingRecordUpdateShowTile"/>
+		</action>
+		
+		<action
+			name="tradingRecordForm"
+			path="/tradingRecordDeleteAction"
+			type="com.rhb.af.web.struts.action.DeleteAction"
+			scope="session">
+	      <forward name="succeed" path="/tradingRecordUpdateListAction.do"/>
+	      <forward name="fail" path="/tradingRecordUpdateShowTile"/>
+		</action>
+
+	</action-mappings>
+
+</struts-config>

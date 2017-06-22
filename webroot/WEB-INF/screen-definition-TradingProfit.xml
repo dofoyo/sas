@@ -1,0 +1,16 @@
+<screen-definitions>
+	<screen name="tradingProfitUpdate.list" title="tradingProfit update list"  builder="com.rhb.af.web.screen.util.HtmlList">
+		<fields>
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="quantity" format="0" align="right"/>
+			<field name="unitprice" format="0.00" align="right"/>
+			<field name="marketValue" format="0.00" align="right" sum="true"/>
+			<field name="profit" format="0.00" align="right" sum="true"/>
+		</fields>
+		<behaviors>
+			<behavior value="refresh" caption="refresh"/>
+		</behaviors>
+	</screen>
+</screen-definitions>
+

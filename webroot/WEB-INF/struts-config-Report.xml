@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+  	  	<form-bean name="reportForm" type="com.rhb.af.web.struts.form.BaseDynaActionForm">
+  	  			<form-property name="page" type="com.rhb.af.bean.Page"/>   
+				<form-property name="bean" type="com.rhb.sas.report.bean.Report"/>   
+				<form-property name="query" type="com.rhb.sas.report.bean.ReportQuery"/>
+				<form-property name="writeBusiness" type="java.lang.String" initial="reportService"/>
+		</form-bean>   
+	</form-beans>
+	
+	<action-mappings>
+		<action
+			name="reportForm"
+			path="/reportUpdateListAction"
+			type="com.rhb.af.web.struts.action.ListAction"
+			scope="session">
+	      <forward name="listTile" path="/reportUpdateListTile"/>
+		</action>
+
+		<action
+			name="reportForm"
+			path="/reportCreateAction"
+			type="com.rhb.af.web.struts.action.CreateAction"
+			scope="session">
+	      <forward name="showTile" path="/reportUpdateShowTile"/>
+		</action>
+
+		<action
+			name="reportForm"
+			path="/reportUpdateAction"
+			type="com.rhb.af.web.struts.action.ShowAction"
+			scope="session">
+	      <forward name="showTile" path="/reportUpdateShowTile"/>
+		</action>
+
+		<action
+			name="reportForm"
+			path="/reportSaveAction"
+			type="com.rhb.af.web.struts.action.SaveAction"
+			scope="session">
+	      <forward name="succeed" path="/reportUpdateListAction.do"/>
+	      <forward name="fail" path="/reportUpdateShowTile"/>
+		</action>
+
+		<action
+			name="reportForm"
+			path="/reportViewListAction"
+			type="com.rhb.af.web.struts.action.ListAction"
+			scope="session">
+	      <forward name="listTile" path="/reportViewListTile"/>
+		</action>
+
+		<action
+			name="reportForm"
+			path="/reportViewAction"
+			type="com.rhb.af.web.struts.action.ShowAction"
+			scope="session">
+	      <forward name="showTile" path="/reportViewShowTile"/>
+		</action>
+
+		<action path="/downloadReport" 
+			type="com.rhb.af.web.struts.action.BaseForwardAction"
+			parameter="/downloadReportTile"/>
+	</action-mappings>
+
+</struts-config>

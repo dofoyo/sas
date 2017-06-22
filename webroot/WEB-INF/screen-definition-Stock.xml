@@ -1,0 +1,62 @@
+<screen-definitions>
+	<screen name="stockUpdate.list" title="stock update list"  builder="com.rhb.af.web.screen.util.HtmlList">
+		<fields>
+			<field name="stockNo"/>
+			<field name="stockName" />
+			<field name="mainBusiness" />
+			<field name="trade" />
+			<field name="roe" format="0.00" caption="净资产收益率" align="right"/>
+			<field name="grossProfitPlus" format="0.00" caption="营业毛利率" align="right"/>
+			<field name="inventoryRatio" format="0.00" caption="库存率" align="right"/>
+			<field name="accountsRreceivableRatio" format="0.00" caption="应收款率" align="right"/>
+			<field name="ratio" formula="inventoryRatio+accountsRreceivableRatio" format="0.00" caption="比率" align="right"/>
+			<field name="netCashFlowPerShare" format="0.000" caption="现金流" align="right"/>
+			<field name="decadeEarningsGrowthRatio" format="0.00" caption="收益增长率" align="center"/>
+			<!--field name="nextTenYearValue" format="0.00"  align="right"/-->
+			<!--field name="afterTenYearValue" format="0.00"  align="right"/-->
+			<field name="pricePerShare" format="0.00" caption="股价" align="right"/>
+			<!-- field name="currentMarketValue" format="0.00" caption="流通市值" align="right"/-->
+			<field name="marketValue" format="0.00" caption="总市值" align="right"/>
+			<field name="nextTenYearDiscount" format="0.00"  align="right"  caption="折价1"/>
+			<field name="discount" format="0.00"  align="right"  caption="总折价1"/>
+			<field name="nextTenYearDiscount_quarter" format="0.00"  align="right" caption="折价2"/>
+			<field name="discount_quarter" format="0.00"  align="right" caption="总折价2"/>
+			<field name="notes" />
+			<field name="reportDate" format="yyyy-MM" caption="报告期"/>
+			<!-- field name="quarterPerformance" caption="季度表现"/ -->
+		</fields>
+		<behaviors>
+			<behavior value="create" caption="create" url="stockCreateAction.do"/>
+			<behavior value="update" caption="update" url="stockUpdateAction.do"/>
+			<behavior value="refresh" caption="refresh"/>
+			<behavior value="reportList" caption="stockNo" linkType="open" url="stockReportListAction.do"/>
+		</behaviors>
+	</screen>
+
+	<screen name="stockUpdate.show" title="stock update show" builder="com.rhb.af.web.screen.util.HtmlShow">
+		<fields>
+			<field name="stockNo" />
+			<field name="stockName" />
+			<field name="mainBusiness" />
+			<field name="trade" />
+			<field name="nextTenYearValue" format="0.00" />
+			<field name="afterTenYearValue" format="0.00" />
+			<field name="pricePerShare" format="0.00" />
+			<field name="marketValue" format="0.00" />
+			<field name="currentMarketValue" format="0.00" />
+			<field name="dzhValue" format="0.00" />
+			<field name="nextTenYearDiscount" format="0.00" />
+			<field name="discount" format="0.00" />
+			<field name="recommendable"/>
+			<field name="deleted"/>
+			<field name="notes" />
+			<field name="madeDate" format="yyyy-MM-dd"/>
+		</fields>
+		<behaviors>
+			<behavior value="back" caption="back"/>
+			<behavior value="save" caption="save" url="stockSaveAction.do"/>
+		</behaviors>
+	</screen>
+
+</screen-definitions>
+

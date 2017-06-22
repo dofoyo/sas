@@ -1,0 +1,116 @@
+A {
+	TEXT-DECORATION: none; 
+	TEXT-TRANSFORM: none; 
+	COLOR: black; 
+	CURSOR:hand;
+}
+
+A:hover {
+	TEXT-DECORATION: underline; 
+	COLOR: red;
+}
+
+BODY {
+	FONT-FAMILY: '宋体'; 
+	FONT-SIZE: 10pt;
+}
+
+TABLE{
+	border: solid #999;
+	border-width: 0px 0px 0px 0px;
+	border-collapse: collapse; //相邻边被合并
+	empty-cells: show;
+	border-spacing:0px; 
+}
+
+TR{
+	height: 25px;
+}
+
+TH {
+	FONT-FAMILY: '宋体'; 
+	FONT-SIZE: 10pt; 
+	padding:0px;
+	background-color: #c0c0c0
+}
+
+TD {
+	FONT-FAMILY: '宋体'; 
+	FONT-SIZE: 10pt;
+	padding:0px;
+}
+
+TABLE.xgafListTable{   
+    border-top: 1px solid #EBEAEE;    
+    border-left: 1px solid #EBEAEE;    
+    border-right: 0px;    
+    border-bottom: 0px;    
+}   
+.xgafListTable TD {   
+    border-top: 1px solid #FFFFFF;    
+    border-left: 1px solid #FFFFFF;    
+    border-right: 1px solid #EBEAEE;    
+    border-bottom: 1px solid #EBEAEE;   
+}   
+.xgafListTable TH {   
+    border-top: 1px solid #FFFFFF;    
+    border-left: 1px solid #FFFFFF;    
+    border-right: 1px solid #FFFFFF;    
+    border-bottom: 1px solid #FFFFFF;   
+} 
+
+textarea {
+	BORDER:1; 
+	BORDER-STYLE: solid; 
+	BORDER-COLOR: #778899;
+	FONT-SIZE:10pt; 
+	FONT-STYLE: '宋体'; 
+}
+
+input.bottomline{
+	FONT-SIZE:10pt; 
+	FONT-STYLE: '宋体'; 
+	BORDER:1; 
+	BORDER-STYLE: solid; 
+	BORDER-COLOR: #778899;
+	BORDER-WIDTH:0px 0px 1px 0px;
+}
+
+input.noneline{
+	FONT-SIZE:10pt; 
+	FONT-STYLE: '宋体'; 
+	BORDER-WIDTH:0px 0px 0px 0px;
+}
+
+input.thtext{
+	FONT-SIZE:10pt; 
+	FONT-STYLE: '宋体'; 
+	BORDER:1; 
+	BORDER-STYLE: solid; 
+	BORDER-COLOR: #778899;
+	BORDER-WIDTH:0px 0px 1px 0px;
+	BACKGROUND-COLOR: #c0c0c0;
+}
+
+.title{
+	FONT-SIZE:14pt; 
+	FONT-STYLE: '宋体'; 
+	font-weight: bolder;
+}
+.message{
+	FONT-SIZE:10pt; 
+	FONT-STYLE: '宋体'; 
+}
+.error{
+	FONT-SIZE:10pt; 
+	FONT-STYLE:'宋体'; 
+	color:red
+}
+
+.grid, .grid_headers, .grid_rows, .grid_row{float:none; clear:all; margin:0px;}
+.grid_header_ctrl, .grid_row_ctrl, .grid_cells{float:left; clear:right; margin:0px;}
+.grid_header, .grid_cell{float:left; clear:right; margin:0px; border-width:1; border-style:solid; text-align:center; vertical-align:middle; height:25px;font-size:9pt;}
+.grid_header{border-color:silver;background-color:#EEEEEE}
+.grid_cell{border-color:silver;}
+.grid_input_text{font-size:9pt; font-family:'宋体'; border-style:none; text-align:center}
+

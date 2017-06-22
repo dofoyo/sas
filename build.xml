@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="compile" name="sas" basedir=".">
+	
+	<property name="src.dir" location="${basedir}/src"/>
+	<property name="lib.dir" location="D:/java/lib"/>
+	<property name="testReport.dir" location="${basedir}/testReport"/>
+	<property name="webroot.dir" location="${basedir}/webroot"/>
+	<property name="classes.dir" location="${basedir}/bin"/>
+	<property name="deploy.dir" location="D:/java/tomcat/webapps"/>
+
+	<path id="classpath">
+		<fileset file="${lib.dir}/*.jar"/>
+		<pathelement path="${classes.dir}"/>
+	</path>
+
+	<target name="compile">
+		<delete dir="${classes.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="ture" encoding="GBK">
+			<classpath refid="classpath"/>
+		</javac>
+		<copy todir="${classes.dir}">
+			<fileset dir="${src.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>		
+		</copy>
+	</target>
+
+    <target name="test">
+		<delete dir="${testReport.dir}"/>
+        <mkdir dir="${testReport.dir}"/>
+        <junit printsummary="on" haltonfailure="false" showoutput="true">
+            <classpath refid="classpath"/>
+			<formatter type="plain"/>
+            <batchtest todir="${testReport.dir}">
+                <fileset dir="${classes.dir}">
+                    <include name="**/*Test.*"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+	<target name="jar">
+		<jar destfile="${lib.dir}/${ant.project.name}.jar" basedir="${classes.dir}" includes="**/*.*">
+		</jar>
+	</target>
+	
+	<target name="war">
+		<war destfile="${deploy.dir}/${ant.project.name}.war" webxml="${webroot.dir}/WEB-INF/web.xml">
+			<fileset dir="${webroot.dir}"/>
+			<lib dir="${lib.dir}">
+				<include name="javaee-1.0.jar"/>
+				<include name="antlr-2.7.6.jar"/>
+				<include name="asm-1.5.3.jar"/>
+				<include name="atomilos-transactions-essentials-all-3.4.4.jar"/>
+				<include name="cglib-2.1.3.jar"/>
+				<include name="commons-beanutils-1.6.jar"/>
+				<include name="commons-collections-3.1.jar"/>
+				<include name="commons-digester-1.6.jar"/>
+				<include name="commons-logging-1.0.4.jar"/>
+				<include name="commons-validator-1.1.4.jar"/>
+				<include name="dom4j-1.6.1.jar"/>
+				<include name="hibernate-3.2.5.ga.jar"/>
+				<include name="jtds-1.2.2.jar"/>
+				<include name="log4j-1.2.14.jar"/>
+				<include name="mvel2-2.0.5.jar"/>
+				<include name="poi-3.0.1-FINAL-20070705.jar"/>
+				<include name="spring-2.1.0.jar"/>
+				<include name="sqljdbc.jar"/>
+				<include name="hsqldb-1.8.1.0.jar"/>
+				<include name="struts-1.2.9.jar"/>
+				<include name="rhbaf.jar"/>
+			</lib>
+			<classes dir="${classes.dir}"/>
+		</war>
+	</target>
+		
+</project>

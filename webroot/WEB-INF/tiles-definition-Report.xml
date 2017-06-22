@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+        
+<tiles-definitions>
+	<definition name="/reportUpdateListTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=reportUpdate.list"/>
+	</definition>
+
+	<definition name="/reportUpdateShowTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=reportUpdate.show"/>
+	</definition>
+		
+	<definition name="/reportViewListTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=reportView.list"/>
+	</definition>
+	
+	<definition name="/reportViewShowTile" extends="defaultLayoutTile">
+		<put name="body" value="/screen?screenName=reportView.show"/>
+	</definition>	
+
+	<definition name="/downloadReportTile" extends="defaultLayoutTile">
+		<put name="body" value="../downloadReport.jsp"/>
+	</definition>	
+</tiles-definitions>
+

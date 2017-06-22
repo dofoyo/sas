@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://struts.apache.org/dtds/tiles-config_1_1.dtd"><tiles-definitions>
+	<definition name="defaultLayoutTile" 
+		template="/layout/defaultLayout.jsp">
+		<put name="title" value="sas"/>
+		<put name="header" value="sas"/>
+		<put name="menu" value="/menu"/>
+		<put name="body" value=""/>
+		<put name="footer" value="Copyright(R) 2008-2009 RHB"/>
+	</definition>
+
+	<definition name="selectLayoutTile" 
+		template="/layout/selectLayout.jsp">
+		<put name="title" value="sas"/>
+		<put name="body" value=""/>
+	</definition>
+	
+	<definition name="/homeTile" extends="defaultLayoutTile"/>
+</tiles-definitions>

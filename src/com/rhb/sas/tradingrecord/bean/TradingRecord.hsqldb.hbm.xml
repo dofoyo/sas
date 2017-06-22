@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rhb.sas.tradingrecord.bean.TradingRecord" table="tradingrecord">
+		<id name="recordPk" type="java.lang.String">
+			<column name="recordPk" length="24" />
+			<generator class="assigned" />
+		</id>
+		<property name="stockNo" type="java.lang.String">
+			<column name="stockNo" length="24" />
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="stockName" length="24" />
+		</property>
+		<property name="madeDate" type="java.util.Date">
+			<column name="madeDate" length="24" />
+		</property>
+		<property name="action" type="java.lang.String">
+			<column name="action" length="24" />
+		</property>
+		<property name="quantity" type="java.lang.Integer">
+			<column name="quantity" precision="53" scale="0" />
+		</property>
+		<property name="unitprice" type="java.lang.Double">
+			<column name="unitprice" precision="53" scale="0" />
+		</property>
+		<property name="amount" type="java.lang.Double">
+			<column name="amount" precision="53" scale="0" />
+		</property>		
+		<property name="total" type="java.lang.Double">
+			<column name="total" precision="53" scale="0" />
+		</property>		
+		<property name="tax" type="java.lang.Double">
+			<column name="tax" precision="53" scale="0" />
+		</property>		
+		<property name="fee" type="java.lang.Double">
+			<column name="fee" precision="53" scale="0" />
+		</property>		
+		<property name="cost" type="java.lang.Double">
+			<column name="cost" precision="53" scale="0" />
+		</property>			
+	</class>
+</hibernate-mapping>

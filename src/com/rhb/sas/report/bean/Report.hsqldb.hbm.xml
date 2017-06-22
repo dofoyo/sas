@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rhb.sas.report.bean.Report" table="report">
+		<id name="reportPk" type="java.lang.String">
+			<column name="reportPk" length="24" />
+			<generator class="assigned" />
+		</id>
+		<property name="stockNo" type="java.lang.String">
+			<column name="stockNo" length="24" />
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="stockName" length="24" />
+		</property>
+		<property name="periodType" type="java.lang.String">
+			<column name="periodType" length="24" />
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="description" length="24" />
+		</property>
+		<property name="beginDate" type="java.util.Date">
+			<column name="beginDate" length="24" />
+		</property>
+		<property name="endDate" type="java.util.Date">
+			<column name="endDate" length="24" />
+		</property>
+		<property name="cash" type="java.lang.Double">
+			<column name="cash" precision="53" scale="0" />
+		</property>
+		<property name="inventories" type="java.lang.Double">
+			<column name="inventories" precision="53" scale="0" />
+		</property>
+		<property name="accountsRreceivable" type="java.lang.Double">
+			<column name="accountsRreceivable" precision="53" scale="0" />
+		</property>
+		<property name="notesReceivable" type="java.lang.Double">
+			<column name="notesReceivable" precision="53" scale="0" />
+		</property>
+		<property name="otherReceivable" type="java.lang.Double">
+			<column name="otherReceivable" precision="53" scale="0" />
+		</property>
+		<property name="totalCurrentAssets" type="java.lang.Double">
+			<column name="totalCurrentAssets" precision="53" scale="0" />
+		</property>
+		<property name="payables" type="java.lang.Double">
+			<column name="payables" precision="53" scale="0" />
+		</property>
+		<property name="currentLiabilities" type="java.lang.Double">
+			<column name="currentLiabilities" precision="53" scale="0" />
+		</property>
+		<property name="totalAssets" type="java.lang.Double">
+			<column name="totalAssets" precision="53" scale="0" />
+		</property>
+		<property name="totalLiabilities" type="java.lang.Double">
+			<column name="totalLiabilities" precision="53" scale="0" />
+		</property>
+		<property name="purchaseAssets" type="java.lang.Double">
+			<column name="purchaseAssets" precision="53" scale="0" />
+		</property>
+		<property name="depreciationAssets" type="java.lang.Double">
+			<column name="depreciationAssets" precision="53" scale="0" />
+		</property>
+		<property name="netProfit" type="java.lang.Double">
+			<column name="netProfit" precision="53" scale="0" />
+		</property>
+		<property name="netProfitPlus" type="java.lang.Double">
+			<column name="netProfitPlus" precision="53" scale="0" />
+		</property>
+		<property name="shareholders" type="java.lang.Double">
+			<column name="shareholders" precision="53" scale="0" />
+		</property>
+		<property name="netCashFlow" type="java.lang.Double">
+			<column name="netCashFlow" precision="53" scale="0" />
+		</property>
+		<property name="roe" type="java.lang.Double">
+			<column name="roe" precision="53" scale="0" />
+		</property>
+		<property name="earnings" type="java.lang.Double">
+			<column name="earnings" precision="53" scale="0" />
+		</property>
+		<property name="earningsAvg" type="java.lang.Double">
+			<column name="earningsAvg" precision="53" scale="0" />
+		</property>
+		<property name="earningsGrowthRatio" type="java.lang.Double">
+			<column name="earningsGrowthRatio" precision="53" scale="0" />
+		</property>
+		<property name="theYear" type="java.lang.String">
+			<column name="theYear" length="10" />
+		</property>
+		<property name="theMonth" type="java.lang.String">
+			<column name="theMonth" length="10" />
+		</property>
+		<property name="readOnly" type="java.lang.Integer">
+			<column name="readOnly" precision="53" scale="0"/>
+		</property>
+		<property name="primeOperatingRevenue" type="java.lang.Double">
+			<column name="primeOperatingRevenue" precision="53" scale="0" />
+		</property>
+		<property name="primeOperatingProfit" type="java.lang.Double">
+			<column name="primeOperatingProfit" precision="53" scale="0" />
+		</property>
+		<property name="operatingProfit" type="java.lang.Double">
+			<column name="operatingProfit" precision="53" scale="0" />
+		</property>
+		<property name="netAssetsPerShare" type="java.lang.Double">
+			<column name="netAssetsPerShare" precision="53" scale="0" />
+		</property>
+		<property name="earningsPerShare" type="java.lang.Double">
+			<column name="earningsPerShare" precision="53" scale="0" />
+		</property>
+		<property name="netCashFlowPerShare" type="java.lang.Double">
+			<column name="netCashFlowPerShare" precision="53" scale="0" />
+		</property>
+		<property name="capitalFundPerShare" type="java.lang.Double">
+			<column name="capitalFundPerShare" precision="53" scale="0" />
+		</property>
+
+		<property name="operatingExpense" type="java.lang.Double">
+			<column name="operatingExpense" precision="53" scale="0" />
+		</property>
+		<property name="salesExpense" type="java.lang.Double">
+			<column name="salesExpense" precision="53" scale="0" />
+		</property>
+		<property name="financeExpense" type="java.lang.Double">
+			<column name="financeExpense" precision="53" scale="0" />
+		</property>
+		
+
+	</class>
+</hibernate-mapping>

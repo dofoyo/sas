@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu-definition>
+<menu name="Stocks List" href="stockUpdateListAction.do" caption="Stocks List"/>
+<menu name="Reports List" href="reportUpdateListAction.do" caption="Reports List"/>
+<menu name="TradingRecords List" href="tradingRecordUpdateListAction.do" caption="TradingRecords List"/>
+<menu name="TradingProfit List" href="tradingProfitUpdateListAction.do" caption="TradingProfit List"/>
+<menu name="download MarketInfo" href="downloadMarketInfo.do" caption="download MarketInfo"/>
+<menu name="download Report" href="downloadReport.do" caption="download Report"/>
+<menu name="download Yjyg" href="downloadYjyg.do" caption="download Yjyg"/>
+</menu-definition>
